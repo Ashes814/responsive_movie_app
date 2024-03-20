@@ -1,15 +1,15 @@
-import { Box } from "@mui/material";
 import { ReactNode } from "react";
+import { Box } from "@mui/material";
 import Sidebar from "../components/sidebar";
 
 interface LayoutProps {
-    children: ReactNode
+  children: ReactNode;
 }
-
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <Box sx={{
+    <Box
+      sx={{
         backgroundColor: "#10141F",
         display: "flex",
         flexDirection: {
@@ -21,11 +21,12 @@ const Layout = ({ children }: LayoutProps) => {
         gap: 3,
         overflowY: "hidden",
         height: "100vh",
-    }}>
-            <Sidebar    />
-            <Box sx={{width:"100%", overflowY:"scroll"}}/>
-         </Box>
-  )
-}
+      }}
+    >
+      <Sidebar />
+      <Box sx={{ width: "100%", overflowY: "scroll" }}>{children}</Box>
+    </Box>
+  );
+};
 
-export default Layout
+export default Layout;
